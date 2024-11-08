@@ -1,59 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Stay informed about hurricane alerts and tracking with StormAware">
-    <title>StormAware - Hurricane Tracking</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Storm.Aware - Aprende sobre Huracanes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #0f4c75, #1f6f91);
+            color: white;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f6f91;
+            border-bottom: 5px solid #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        h2 {
+            color: #ffcc00;
+            font-size: 2em;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        footer {
+            text-align: center;
+            background-color: #1f6f91;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        footer p {
+            margin: 0;
+        }
+        .hurricane-image {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>StormAware</h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Hurricane Alerts</a></li>
-                    <li><a href="#">Tracking</a></li>
-                    <li><a href="#">Emergency Tips</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Storm.Aware</h1>
+        <p>¡Todo lo que necesitas saber sobre los huracanes!</p>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Track and Stay Safe with StormAware</h2>
-            <p>Get real-time alerts and information about the latest hurricanes in your area.</p>
-        </div>
-    </section>
+    <div class="container">
+        <section>
+            <h2>¿Qué es un Huracán?</h2>
+            <p>Un huracán es una tormenta tropical muy fuerte con vientos que superan los 119 km/h. Los huracanes se forman sobre aguas cálidas del océano y pueden causar grandes daños si tocan tierra, como inundaciones y vientos destructivos.</p>
+        </section>
 
-    <section class="latest-updates">
-        <div class="container">
-            <h2>Latest Hurricane Updates</h2>
-            <div class="updates">
-                <div class="update">
-                    <h3>Hurricane Name</h3>
-                    <p><strong>Status:</strong> Category 4</p>
-                    <p><strong>Location:</strong> 25°N, 85°W</p>
-                    <p><strong>Estimated Landfall:</strong> 2 hours from now</p>
-                </div>
-                <div class="update">
-                    <h3>Hurricane Name</h3>
-                    <p><strong>Status:</strong> Category 2</p>
-                    <p><strong>Location:</strong> 20°N, 75°W</p>
-                    <p><strong>Estimated Landfall:</strong> 10 hours from now</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        <section>
+            <h2>Cómo se Forma un Huracán</h2>
+            <p>Los huracanes se forman cuando el aire cálido y húmedo se eleva desde el océano. Este aire sube y se condensa formando nubes y liberando calor. Este proceso crea un sistema de baja presión que hace que más aire fluya hacia el centro. A medida que el aire sigue girando, se forma el ojo del huracán, y el sistema se fortalece.</p>
+        </section>
+
+        <section>
+            <h2>Impacto de los Huracanes</h2>
+            <p>Cuando un huracán llega a la tierra, puede causar graves daños. Los vientos fuertes derriban árboles y edificios, y las lluvias pueden provocar inundaciones. Las personas que viven en áreas costeras deben estar preparadas y seguir las advertencias de los meteorólogos.</p>
+        </section>
+
+        <section>
+            <h2>Consejos para Estar Preparado</h2>
+            <p>Es importante estar preparado antes de que un huracán llegue. Algunos consejos incluyen:</p>
+            <ul>
+                <li>Escuchar las alertas meteorológicas y seguir las instrucciones de las autoridades.</li>
+                <li>Evacuar si es necesario, especialmente si vives cerca de la costa.</li>
+                <li>Tener un kit de emergencia con agua, alimentos y medicinas.</li>
+                <li>Proteger las ventanas y puertas de la casa.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Imagen de un Huracán</h2>
+            <img class="hurricane-image" src="https://via.placeholder.com/1000x400.png?text=Imagen+de+huracán" alt="Huracán en el océano">
+        </section>
+    </div>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 StormAware. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Storm.Aware. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
+
