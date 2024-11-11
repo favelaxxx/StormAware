@@ -1,11 +1,48 @@
-<!DOCTYPE html>
-<html>
-<body>
+/* Estilos básicos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-<h1>HTML Links</h1>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1f4b99; /* Azul oscuro en los bordes */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 
-<p><a href="index.html">Visit W3Schools.com!</a></p>
+/* Contenedor principal */
+.container {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #4f4f4f; /* Gris tormentoso */
+  border-left: 10px solid #0073e6; /* Borde azul izquierdo */
+  border-right: 10px solid #0073e6; /* Borde azul derecho */
+  padding: 20px;
+  color: #ffffff; /* Texto blanco para contraste */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-</body>
-</html>
+/* Títulos y párrafos */
+.container h1, .container h2, .container h3 {
+  color: #ffffff; /* Blanco para títulos */
+}
 
+.container p {
+  color: #dcdcdc; /* Gris claro para el texto */
+  line-height: 1.6;
+}
+
+/* Efectos de Hover en los enlaces */
+.container a {
+  color: #66b3ff;
+  text-decoration: none;
+}
+
+.container a:hover {
+  color: #b3d9ff;
+  text-decoration: underline;
+}
