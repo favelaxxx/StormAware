@@ -5,6 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Storm.Aware - Información sobre Huracanes</title>
     <style>
+        import React, { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const menuItems = [
+    { name: 'Home', link: '#home' },
+    { name: 'Contact Us', link: '#contact' },
+    { name: 'About', link: '#about' },
+    { name: 'Hurricane Tracking', link: '#tracking' },
+    { name: 'Safety Tips', link: '#safety' }
+  ];
+
+  return (
+    <div className="relative">
+      {/* Hamburger Menu Button */}
+      <button 
+        onClick={toggleMenu} 
+        className="fixed top-4 left-4 z-50 p-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+      >
+        {isOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* Sliding Navigation Menu */}
+      {isOpen && (
+        <div className="fixed top-0 left-0 w-64 h-full bg-white shadow-lg z-40 transform translate-x-0 transition-transform">
+          <nav className="pt-16 px-4">
+            <ul className="space-y-4">
+              {menuItems.map((item) => (
+                <li key={item.name}>
+                  <a 
+                    href={item.link} 
+                    className="block py-2 px-3 text-lg text-blue-600 hover:bg-blue-100 rounded-md transition-colors"
+                    onClick={toggleMenu}
+                  >
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </div>
+      )}
+
+      {/* Overlay when menu is open */}
+      {isOpen && (
+        <div 
+          className="fixed inset-0 bg-black opacity-50 z-30" 
+          onClick={toggleMenu}
+        />
+      )}
+    </div>
+  );
+};
+
+export default Navigation;
         * {
             margin: 0;
             padding: 0;
