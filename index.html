@@ -16,6 +16,7 @@
             background: linear-gradient(135deg, #0099cc, #006699);
             color: white;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         .container {
@@ -123,9 +124,150 @@
                 padding: 15px;
             }
         }
+
+        /* Sidebar Styles */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100%;
+            background: linear-gradient(145deg, #00b3b3, #0099cc);
+            color: #fff;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.2);
+            perspective: 1000px;
+        }
+
+        .sidebar.open {
+            left: 0;
+            transform: perspective(1200px) rotateY(0deg);
+        }
+
+        .sidebar-header {
+            padding: 25px;
+            background-color: rgba(0,0,0,0.1);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .sidebar-header h3 {
+            margin: 0;
+            font-size: 24px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .sidebar-nav {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar-nav li {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav li a {
+            display: block;
+            padding: 15px 20px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sidebar-nav li a:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #fff);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-nav li a:hover {
+            background-color: rgba(255,255,255,0.1);
+            padding-left: 30px;
+        }
+
+        .sidebar-nav li a:hover:before {
+            left: 0;
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(145deg, #00b3b3, #0099cc);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1001;
+            box-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-toggle:hover {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .sidebar-toggle span {
+            display: block;
+            width: 22px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 2px;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-toggle.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .sidebar-toggle.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .sidebar-toggle.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
     </style>
 </head>
 <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>Storm Aware</h3>
+        </div>
+        <ul class="sidebar-nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Feedback</a></li>
+        </ul>
+    </div>
+    <div class="sidebar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Main Content -->
     <div class="container">
         <header>
             <h1>Storm.Aware</h1>
@@ -189,6 +331,16 @@
             <p>© 2024 Storm Aware - Stay safe, stay informed</p>
         </footer>
     </div>
+
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            sidebarToggle.classList.toggle('open');
+        });
+    </script>
 </body>
 </html>
 
